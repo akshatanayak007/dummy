@@ -1,0 +1,29 @@
+﻿@model OnlineBook.Models.Book
+
+@{
+    ViewData["Title"] = "Books";
+}
+
+<h1>Books</h1>
+
+
+<div>
+    <table>
+        <tr>
+
+            <td>
+                <a asp-action="GetByIdPage" >GetById</a> |
+                
+            </td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

@@ -1,0 +1,44 @@
+﻿@model OnlineBook.Models.Book
+
+@{
+    ViewData["Title"] = "Get Book By ID";
+}
+
+
+<h4>Book</h4>
+<hr />
+<script>
+
+
+    function getInputValue() {
+
+        let inputVal = document.getElementById("inputId").value;
+        var i = "/Books/Details/"+inputVal;
+        $("#viewBook").attr("href", i);
+    }
+
+
+</script>
+
+
+<dl class="row">
+    <dt class="col-sm-2">
+    <input type="text" placeholder="Type " id="inputId">
+    </dt>
+    </dl>
+
+
+
+    <div>
+    <a id="viewBook" asp-controller="Books" asp-action="Details" asp-route-id = "g_id" class="btn btn-primary" onclick="getInputValue()">
+Search</a>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+
+@section Scripts {
+    @{
+
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
